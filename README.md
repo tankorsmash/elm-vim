@@ -2,6 +2,20 @@
 
 ![logo](https://raw.github.com/elmcast/elm-vim/master/screenshots/logo.png)
 
+## This Fork
+
+It appears that [ElmCast/elm-vim](https://github.com/ElmCast/elm-vim) is no longer being updated and
+does not support Elm 0.19. This fork has been updated for Elm 0.19 and includes some other changes.
+No major development is planned at the moment but we do plan to keep up with necessary changes and
+merge requests are welcome. Changes so far:
+
+- Support for Elm 0.19 compiler
+- Support for building files with test dependencies.
+- Improvements to the `gf` binding to handle prefixed function calls and module aliases. It also
+  attempts to take you to the line of the function in question though that is behaviour normally
+  associated with `C-]`. It might be moved at some point.
+
+
 ## Features
 
 1. Syntax highlighting
