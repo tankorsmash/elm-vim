@@ -14,6 +14,7 @@ merge requests are welcome. Changes so far:
 - Improvements to the `gf` binding to handle prefixed function calls and module aliases. It also
   attempts to take you to the line of the function in question though that is behaviour normally
   associated with `C-]`. It might be moved at some point.
+- Always execute `elm-format` in the project root so it can detect the elm version appropriately.
 
 
 ## Features
