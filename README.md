@@ -15,6 +15,9 @@ merge requests are welcome. Changes so far:
   attempts to take you to the line of the function in question though that is behaviour normally
   associated with `C-]`. It might be moved at some point.
 - Always execute `elm-format` in the project root so it can detect the elm version appropriately.
+- Better support for folding
+- Multiline type declaration highlighting
+- Specific highlighting for modules to separate them from types
 
 
 ## Features
