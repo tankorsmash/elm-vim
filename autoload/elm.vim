@@ -176,7 +176,8 @@ function! elm#Build(input, output, bin) abort
   " As this is a bit dangerous we make it opt in via a config option
   if l:reports =~? '^elm: not enough bytes.*' && g:elm_delete_elm_stuff_on_fail == 1
     call elm#util#Echo('elm make:', 'deleting and rebuilding...')
-    call s:ExecuteInRoot('rm -fr ./elm-stuff')
+    " call s:ExecuteInRoot('rm -fr ./elm-stuff')
+    call s:ExecuteInRoot('find src -name "*.elm" | xargs touch')
     let l:reports = s:ExecuteInRoot(l:command)
   endif
 
