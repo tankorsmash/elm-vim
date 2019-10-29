@@ -170,17 +170,6 @@ function! elm#Build(input, output, bin) abort
   let l:command = a:bin . ' ' . l:subcommand . ' ' . l:format  . ' ' . l:input . ' ' . l:output
   let l:reports = s:ExecuteInRoot(l:command)
 
-  " If we hit the common 'elm: not enough bytes' error then we delete the
-  " elm-stuff directory and rebuild.
-  "
-  " As this is a bit dangerous we make it opt in via a config option
-  if l:reports =~? '^elm: not enough bytes.*' && g:elm_delete_elm_stuff_on_fail == 1
-    call elm#util#Echo('elm make:', 'deleting and rebuilding...')
-    " call s:ExecuteInRoot('rm -fr ./elm-stuff')
-    call s:ExecuteInRoot('find src -name "*.elm" | xargs touch')
-    let l:reports = s:ExecuteInRoot(l:command)
-  endif
-
   if l:reports !=# ''
     let l:json = elm#util#DecodeJSON(l:reports)
 
@@ -191,7 +180,7 @@ function! elm#Build(input, output, bin) abort
     " There are situations where you might have an unknown import in a
     " non-test file but I would hope there error in that case would be the
     " same in 'elm-test' too.
-    if a:bin !=# 'elm-test' && l:json.type ==# 'error' && l:json.title ==# 'UNKNOWN IMPORT'
+    if a:bin !=# 'elm-test' && l:json.type ==# 'compile-errors' && l:json.errors[0].problems[0].title ==# 'MODULE NOT FOUND'
       return elm#Build(a:input, a:output, 'elm-test')
     " Check it is the json output that we're expecting
     elseif l:json.type ==# 'compile-errors'
