@@ -2,6 +2,20 @@
 
 ![logo](https://raw.github.com/elmcast/elm-vim/master/screenshots/logo.png)
 
+## Elm & Vim Ecosystem
+
+If you are looking to work with Elm in Vim you should definitely check out:
+
+- [Elm Language Server](https://github.com/elm-tooling/elm-language-server) - The language server
+  implementation for Elm. Language servers provide tooling for working with particular programming
+  languages. The Elm language server provides
+  [features](https://github.com/elm-tooling/elm-language-server#features) like compiler errors,
+  elm-analyse warnings, completions and jump-to-definition amongst many more. There are a [number of
+  ways](https://github.com/elm-tooling/elm-language-server#editor-support) of connecting the
+  language server to vim.
+- [elm-tooling/elm-vim](https://github.com/elm-tooling/elm-vim) - Provides lots of useful
+  information on getting started with working with Elm in Vim.
+
 ## This Fork
 
 It appears that [ElmCast/elm-vim](https://github.com/ElmCast/elm-vim) is no longer being updated and
@@ -16,7 +30,6 @@ merge requests are welcome. Changes so far:
   associated with `C-]`. It might be moved at some point.
 - Always execute `elm-format` in the project root so it can detect the elm version appropriately.
 - Specific highlighting for modules to separate them from types
-
 
 ## Features
 
