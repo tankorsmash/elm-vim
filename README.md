@@ -15,6 +15,7 @@ If you are looking to work with Elm in Vim you should definitely check out:
   language server to vim.
 - [elm-tooling/elm-vim](https://github.com/elm-tooling/elm-vim) - Provides lots of useful
   information on getting started with working with Elm in Vim.
+- [vim](https://github.com/vim/vim/blob/master/runtime/syntax/elm.vim) - Vim (8.2.0929+) includes Elm Syntax Highlighting and Indentation
 
 ## This Fork
 
